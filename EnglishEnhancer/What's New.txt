@@ -1,0 +1,8 @@
+1.1.6205
+1. Beatified menu, add quick keys and icons. 
+2. Added splitter to the window. 
+3. Improved code stability, and upgraded complier to VS2017. 
+
+1.1.6208+
+1. Updated to .Net 4.6.2. 
+2. 
