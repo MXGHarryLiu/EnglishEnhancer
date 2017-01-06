@@ -115,7 +115,7 @@ Namespace My.Resources
         '''</summary>
         Friend ReadOnly Property plus_2_256() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("plus-2-256", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("plus_2_256", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
