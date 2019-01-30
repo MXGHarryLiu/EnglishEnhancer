@@ -923,7 +923,7 @@ a:
        & "English learning companion and handy notebook" & vbNewLine _
        & "lzhchild@hotmail.com" & vbNewLine _
        & vbNewLine _
-       & "© 2016 - 2017 MXG Flying Studio", MsgBoxStyle.OkOnly + MsgBoxStyle.Information, "About Us")
+       & "© 2016 - 2019 MXG Flying Studio", MsgBoxStyle.OkOnly + MsgBoxStyle.Information, "About Us")
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick

@@ -8,83 +8,83 @@ EnglishEnhancer
 <members>
 <member name="T:EnglishEnhancer.My.Resources.Resources">
 <summary>
-  一个强类型的资源类，用于查找本地化的字符串等。
+  A strongly-typed resource class, for looking up localized strings, etc.
 </summary>
 </member>
 <member name="P:EnglishEnhancer.My.Resources.Resources.ResourceManager">
 <summary>
-  返回此类使用的缓存的 ResourceManager 实例。
+  Returns the cached ResourceManager instance used by this class.
 </summary>
 </member>
 <member name="P:EnglishEnhancer.My.Resources.Resources.Culture">
 <summary>
-  使用此强类型资源类，为所有资源查找
-  重写当前线程的 CurrentUICulture 属性。
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
 </summary>
 </member>
 <member name="P:EnglishEnhancer.My.Resources.Resources.Cancel_256x">
 <summary>
-  查找 System.Drawing.Bitmap 类型的本地化资源。
+  Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:EnglishEnhancer.My.Resources.Resources.CopyToClipboard_256x">
 <summary>
-  查找 System.Drawing.Bitmap 类型的本地化资源。
+  Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:EnglishEnhancer.My.Resources.Resources.dictionary">
 <summary>
-  查找 System.Drawing.Bitmap 类型的本地化资源。
+  Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:EnglishEnhancer.My.Resources.Resources.Document_256x">
 <summary>
-  查找 System.Drawing.Bitmap 类型的本地化资源。
+  Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:EnglishEnhancer.My.Resources.Resources.Log_256x">
 <summary>
-  查找 System.Drawing.Bitmap 类型的本地化资源。
+  Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:EnglishEnhancer.My.Resources.Resources.plus_2_256">
 <summary>
-  查找 System.Drawing.Bitmap 类型的本地化资源。
+  Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:EnglishEnhancer.My.Resources.Resources.Refresh_grey_256x">
 <summary>
-  查找 System.Drawing.Bitmap 类型的本地化资源。
+  Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:EnglishEnhancer.My.Resources.Resources.Save_256x">
 <summary>
-  查找 System.Drawing.Bitmap 类型的本地化资源。
+  Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:EnglishEnhancer.My.Resources.Resources.Search_256x">
 <summary>
-  查找 System.Drawing.Bitmap 类型的本地化资源。
+  Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:EnglishEnhancer.My.Resources.Resources.StatusHelp_256x">
 <summary>
-  查找 System.Drawing.Bitmap 类型的本地化资源。
+  Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:EnglishEnhancer.My.Resources.Resources.StatusInvalid_256x">
 <summary>
-  查找 System.Drawing.Bitmap 类型的本地化资源。
+  Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:EnglishEnhancer.My.Resources.Resources.StatusOK_256x">
 <summary>
-  查找 System.Drawing.Bitmap 类型的本地化资源。
+  Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:EnglishEnhancer.My.Resources.Resources.Web_256x">
 <summary>
-  查找 System.Drawing.Bitmap 类型的本地化资源。
+  Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
 </members>
