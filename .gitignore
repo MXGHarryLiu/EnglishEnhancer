@@ -1,4 +1,5 @@
 .gitignore
 EnglishEnhancer/obj/
+EnglishEnhancer/bin/
 .vs/
 zips/EnglishEnhancer 1.1.6205 code.zip
