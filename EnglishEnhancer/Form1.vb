@@ -50,14 +50,14 @@ Public Class Form1
     Private EntryCount As Integer = 0
     Private SynonymCount As Integer = 0
     Private Analysing As Boolean = False
-    Private Urls As String = "http://www.freerice.com"
-    Private Shorten(,) As String = {{"ment", ""}, {"less", ""}, {"ied", "y"}, {"ed", ""}, {"ed", "e"},
+    Private Urls As String = "https://www.wikipedia.org"
+    Private ReadOnly Shorten(,) As String = {{"ment", ""}, {"less", ""}, {"ied", "y"}, {"ed", ""}, {"ed", "e"},
                                     {"er", ""}, {"er", "e"}, {"est", ""}, {"est", "e"}, {"ly", ""},
                                     {"ily", "y"}, {"ing", ""}, {"ing", "e"}, {"tion", "t"}, {"tion", "te"},
                                     {"nce", "nt"}, {"ncy", "nt"}, {"ness", ""}, {"iness", "y"}, {"ful", ""},
                                     {"iful", "y"}, {"s", ""}, {"ses", "s"}, {"xes", "x"}, {"oes", "o"},
                                     {"ies", "y"}, {"ves", "f"}, {"le", "ility"}}
-    Private Prefix As String() = {"a", "anti", "de", "dis", "il", "im", "in", "ir", "non", "un"}
+    Private ReadOnly Prefix As String() = {"a", "anti", "de", "dis", "il", "im", "in", "ir", "non", "un"}
     Private TimeRemain As Long = 0
 
     Private Function FormatTime(ByVal Sec As Long) As String
