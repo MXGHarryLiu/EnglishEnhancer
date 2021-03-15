@@ -19,28 +19,28 @@ Public Class Form1
         ReadIni = sb.ToString
     End Function
 
-    Private Sub WriteIni(ByVal Section As String, ByVal Key As String, ByVal Value As String)
+    Private Shared Sub WriteIni(ByVal Section As String, ByVal Key As String, ByVal Value As String)
         WritePrivateProfileString(Section, Key, Value, System.AppDomain.CurrentDomain.BaseDirectory() & "Resource.ini")
     End Sub
 
-    Private Sub SetGender(ByVal Key As String, ByVal Value As String)
+    Private Shared Sub SetGender(ByVal Key As String, ByVal Value As String)
         WritePrivateProfileString("Gender", Key, Value, System.AppDomain.CurrentDomain.BaseDirectory() & "Gender.ini")
     End Sub
 
-    Private Function GetGender(ByVal Key As String, ByVal Deflt As String) As String
+    Private Shared Function GetGender(ByVal Key As String, ByVal Deflt As String) As String
         Dim sb = New System.Text.StringBuilder(500)
         GetPrivateProfileString("Gender", Key, Deflt, sb, sb.Capacity, System.AppDomain.CurrentDomain.BaseDirectory() & "Gender.ini")
         GetGender = sb.ToString
     End Function
 
-    Private Sub SetNotebook(ByVal Key As String, Optional ByVal Delete As Boolean = False)
+    Private Shared Sub SetNotebook(ByVal Key As String, Optional ByVal Delete As Boolean = False)
         Dim Record As String = GetNotebook(Key)
         Record += 1
         If Delete Then Record = Nothing
         WritePrivateProfileString("Glossary", Key, Record, System.AppDomain.CurrentDomain.BaseDirectory() & "Notebook.ini")
     End Sub
 
-    Private Function GetNotebook(ByVal Key As String) As String
+    Private Shared Function GetNotebook(ByVal Key As String) As String
         Dim sb = New System.Text.StringBuilder(500)
         GetPrivateProfileString("Glossary", Key, "0", sb, sb.Capacity, System.AppDomain.CurrentDomain.BaseDirectory() & "Notebook.ini")
         GetNotebook = sb.ToString
@@ -60,7 +60,7 @@ Public Class Form1
     Private ReadOnly Prefix As String() = {"a", "anti", "de", "dis", "il", "im", "in", "ir", "non", "un"}
     Private TimeRemain As Long = 0
 
-    Private Function FormatTime(ByVal Sec As Long) As String
+    Private Shared Function FormatTime(ByVal Sec As Long) As String
         If Sec >= 0 Then
             FormatTime = (Sec \ 3600) & ":" & ((Sec \ 60) Mod 60).ToString("00") & ":" & (Sec Mod 60).ToString("00")
         Else
@@ -68,7 +68,7 @@ Public Class Form1
         End If
     End Function
 
-    Private Function CountIni(ByVal Section As String) As Integer
+    Private Shared Function CountIni(ByVal Section As String) As Integer
         CountIni = -1
         Dim Temp As String = ""
         Dim Reached As Boolean = False
@@ -95,7 +95,7 @@ a:
         Return CountIni
     End Function
 
-    Private Function RidPunct(ByVal Input As String) As String
+    Private Shared Function RidPunct(ByVal Input As String) As String
         While Input.Length > 0 And InStr("`1234567890-=~!@#$%^&*()_+[]\;,./{}|:<>?' ", Strings.Left(Input, 1)) <> 0
             Input = Strings.Mid(Input, 2, Input.Length - 1)
         End While
@@ -241,7 +241,7 @@ a:
 
     Private Sub TreeViewColor()
         Dim CurrentNode As TreeNode
-        Dim FittedW As String = ""
+        Dim FittedW As String
         For i = 0 To TreeView1.Nodes.Count - 1
             For ii = 0 To TreeView1.Nodes(i).Nodes.Count
                 If ii = TreeView1.Nodes(i).Nodes.Count Then
@@ -265,11 +265,11 @@ a:
     Private Sub AddSynonymsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddSynonymsToolStripMenuItem.Click, TreeView1.MouseDoubleClick
         Dim Entry As String = RidPunct(InputBox("Enter the easy word: ", "Add Synonyms", CurrentWord))
         If Entry = "" Then Exit Sub
-        Dim NewEntry As String = ""
-        Dim WordN As Integer = 0
+        Dim NewEntry As String
+        Dim WordN As Integer
         Dim OldRecord As String = ""
         Dim EasyRoot As String = ReadIni("<Root>", Entry, "")
-        Dim DiffRoot As String = ""
+        Dim DiffRoot As String
         If EasyRoot <> "" Then      'old root
             WordN = ReadIni(EasyRoot, 0, 0)     'new word
             For i = 1 To WordN
@@ -320,11 +320,12 @@ a:
         Call FixW()
         Dim TempString() As String  'count words
         Dim CountN As Integer = 0
+        Dim CharN As Integer = Len(TextBox1.Text)
         TempString = Split(TextBox1.Text.Replace(vbCr, " ").Replace(vbLf, " "), " ")
         For i = 0 To TempString.Length - 1
             If RidPunct(TempString(i)) <> "" Then CountN += 1
         Next i
-        LabelCount.Text = "Word Count: " & CountN
+        LabelCount.Text = CountN & " Word | " & CharN & " Char"
     End Sub
 
     Private Sub SelectAllToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SelectAllToolStripMenuItem.Click
@@ -917,12 +918,12 @@ a:
     End Sub
 
     Private Sub AboutUsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutUsToolStripMenuItem.Click
-        MsgBox(Me.Text & vbNewLine _
-       & vbNewLine _
-       & "--English Version--" & vbNewLine _
-       & "English learning companion and handy notebook" & vbNewLine _
-       & "zhuoheliu@outlook.com" & vbNewLine _
-       & vbNewLine _
+        MsgBox(Me.Text & vbCrLf _
+       & vbCrLf _
+       & "--English Version--" & vbCrLf _
+       & "English learning companion and handy notebook" & vbCrLf _
+       & "zhuoheliu@outlook.com" & vbCrLf _
+       & vbCrLf _
        & "© 2016 - 2021 Zhuohe Liu", MsgBoxStyle.OkOnly + MsgBoxStyle.Information, "About Us")
     End Sub
 
@@ -945,5 +946,4 @@ a:
             If TimeRemain < 0 Then Exit Sub
         End If
     End Sub
-
 End Class
