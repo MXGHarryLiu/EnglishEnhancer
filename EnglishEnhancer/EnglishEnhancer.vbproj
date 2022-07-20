@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net5.0-windows</TargetFramework>
+    <TargetFramework>net6.0-windows</TargetFramework>
     <RootNamespace>EnglishEnhancer</RootNamespace>
     <StartupObject>EnglishEnhancer.Form1</StartupObject>
     <UseWindowsForms>true</UseWindowsForms>
@@ -10,6 +10,10 @@
     <Version>1.2.0</Version>
     <Authors />
     <ApplicationIcon>dictionary.ico</ApplicationIcon>
+    <Company>MXG Flying Studio</Company>
+    <FileVersion>1.2.0.1</FileVersion>
+    <AssemblyVersion>1.2.0.1</AssemblyVersion>
+    <PackageId />
   </PropertyGroup>
 
   <ItemGroup>
@@ -30,6 +34,9 @@
     <None Update="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Update="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
     </None>
   </ItemGroup>
 
